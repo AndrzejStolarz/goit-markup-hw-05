@@ -10,7 +10,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  padding: 0 15px;
 }
 
 .section {
@@ -55,13 +54,9 @@ body {
   color: var(--web-color-blue);
 }
 
-.title-background {
-  background: var(--backgtound-color-grey);
-  background-image: url(/images/people.jpg), url(/images/people.jpg);
-  background-image: linear-gradient(#2f303a66 40%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.background-title {
+  text-align: center;
+  padding: 220px 0;
 }
 
 .menu {
@@ -255,7 +250,7 @@ li {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-clip:inherit;
+  
 }
 
 
@@ -271,12 +266,7 @@ li {
   margin: auto;
 }
 
-.descripti {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 30px;
-  list-style: none;
-}
+
 
 .random {
   display: flex;
@@ -469,58 +459,65 @@ li {
   fill: var(--white-color);
   border-radius: 50%;
   background-color: var(--web-color-blue);
-  outline: none;}
-
+  outline: none;
+}
 /*Modal window*/
-.curtain{
-background: var(--modal-background);
+
+.backdrop{ display:flex;
+background-color: rgba(0, 0, 0, 0.2);
 position: fixed;
+justify-content: center;
+align-items: center;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
+opacity: 1;
+visibility: visible;
+z-index: 1;
+transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
 visibility: hidden;
 pointer-events: none;
 opacity: 0;
-
 transition-delay: 500ms;
+transition-property:opacity, visibility;
+transition-duration: 250ms;
+transition-timing-function: ease-out;
+
 }
 
-.modal-box {
-position: absolute;
-width: 528px;
-min-height: 581px;
-top: 50%;
-left: 50%;
-
-background: var(--white-color);
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
-
-transform: translate(-50%, -50%) scale(1);
-transition-property: transform;
-transition-duration: 1s;
-transition-timing-function: ease;
+.modal {
+  position: relative;
+  width: 528px;
+  height: 581px;
+  background-color: var(--white-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+      0px 2px 1px rgb(0 0 0 / 20%);
+  transform: translateY(0);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.curtain.is-hidden .modal-box {
-transform: translate(-50%, -50%) scale(0.25);
+.is-hidden .modal {
+transform: translateY(-100%) scale(0.25);
 }
 
-.title-background-button-close {
-position: absolute;
-top: 8px;
-right: 8px;
-display: flex;
-justify-content: flex-end;
-border-radius: 50%;
-padding: 5px;
-height: 30px;
-background-color: var(--white-color);
-border: 1px solid rgba(0, 0, 0, 0.1);
-cursor: pointer;
+.background-title-button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
