@@ -56,7 +56,7 @@ body {
 
 .background-title {
   text-align: center;
-  padding: 220px 0;
+  padding: 206px 0;
 }
 
 .menu {
@@ -64,14 +64,39 @@ body {
   text-decoration: none;
 }
 
-.add-menu:hover {
-  color: var(--web-color-blue);
-  fill: var(--web-color-blue);
-}
+.menu-active{color: var(--web-color-blue);}
+
+.menu-active::after{    
+  background-color: var(--web-color-blue);
+  content: '';
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 53px;
+  height: 4px;
+  top: 46px;
+  border-radius: 2px;}
+
+.menu-active:hover::after,
+.menu-active:focus::after{ 
+  background-color: var(--web-color-blue);
+  content: '';
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 53px;
+  height: 4px;
+  top: 46px;
+  border-radius: 2px;}
+
+ 
+.link-menu:hover,
 .link-menu:focus {
   color: var(--web-color-blue);
   fill: var(--web-color-blue);
 }
+
+
 .mail {
   color: var(--mail-color);
   text-decoration: none;
@@ -95,6 +120,9 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .title {
   font-size: 44px;
@@ -334,12 +362,15 @@ li {
 }
 
 .portfolio-net {
-  flex-wrap: wrap;
+  flex-wrap: wrap;}
 
-}
-.portfolio-net figure:hover,
-.portfolio-net figure:focus { box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
- 
+  .port{
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
+
+.port :hover,
+.port :focus { box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
 }
 
 .frame {
@@ -355,6 +386,39 @@ li {
 .pick {
   padding: 0 0 20px 20px;
 }
+.cover-portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-description {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cover-portfolio:hover .cover-description {
+  transform: translateY(0);
+}
+
+.cover-description p {
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 1, 55;
+  letter-spacing: 0.03em;
+  padding: 49px 45px 49px 24px;
+  color: var(--white-color);
+
+}
+
+
 
 /*vector design*/
 /*heder*/
