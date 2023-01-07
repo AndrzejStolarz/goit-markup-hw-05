@@ -30,6 +30,7 @@
 
   --white-color: #ffffff;
   --grey-color: #afb1b8;
+
 }
 
 body {
@@ -251,7 +252,6 @@ li {
   letter-spacing: 0.02em;
   display: flex;
   justify-content: space-between;
-  margin-left: 93px;
   gap: 46px;
 }
 /* nav margin start*/
@@ -474,6 +474,7 @@ li {
   gap: 10px;
   padding-top: 6px;
   padding-bottom: 30px;
+  
 }
 
 .soc-team {
@@ -481,17 +482,18 @@ li {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  outline: none;
   display: flex;
   justify-content: center;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
+
 
 .soc-team:focus,
 .soc-team:hover {
   fill: var(--white-color);
   background-color: var(--web-color-blue);
-  outline: none; 
-  
 }
 
 /* costumers*/
@@ -507,18 +509,17 @@ li {
 
 .company {
   border: 1px solid #afb1b8;
-
   border-radius: 4px;
   fill: #afb1b8;
   padding: 18px 32px 15px 32px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
 .company:hover,
 .company:focus {
   fill: var(--web-color-blue);
   border: 1px solid var(--web-color-blue);
-  border-radius: 4px;
+  
  
   
 }
@@ -556,12 +557,11 @@ li {
 .icons-footer {
   border-radius: 50%;
   fill: var(--white-color);
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+   background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .icons-footer:hover,
 .icons-footer:focus {
   fill: var(--white-color);
