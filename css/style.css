@@ -80,7 +80,7 @@ body {
   height: 4px;
   bottom: -39px;
   border-radius: 2px;}
-/*
+
 .menu-activ:hover::after,
 .menu-activ:focus::after{ 
   background-color: var(--web-color-blue);
@@ -92,7 +92,7 @@ body {
   height: 4px;
   bottom: -38px;
   border-radius: 2px;
-  }*/
+  }
 
  
 .menu:hover,
